@@ -8,7 +8,7 @@ $resultArray = array();
 while ($row = pg_fetch_assoc($result)) {
   $resultArray[] = $row;
 }
-print_r($resultArray);
+#print_r($resultArray);
 
 $js_obj = json_encode($resultArray);
 #print_r($js_obj);
