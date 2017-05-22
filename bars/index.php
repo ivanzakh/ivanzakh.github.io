@@ -5,7 +5,7 @@ $query = "select * from test_table";
 
 $result = pg_query($query);
 $resultArray = array();
-while ($row = pg_fetch_assoc($result)) {
+while ($row = pg_fetch_row($result)) {
   $resultArray[] = $row;
 }
 #print_r($resultArray);
