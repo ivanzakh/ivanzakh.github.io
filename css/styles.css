@@ -14,3 +14,6 @@
 abbr {
 	text-decoration: none;
 }
+.education-block li {
+	list-style: none;
+}
