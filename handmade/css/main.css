@@ -247,9 +247,9 @@ button.make-shop-top {
 .gallery figure {
 	display: inline-block;
 	vertical-align: top;
-	margin-right: 55px;
+	margin-right: 100px;
 	margin-bottom: 60px;
-	width: 360px;
+	width: 300px;
 }
 
 .gallery figure:nth-child(3n) {
