@@ -251,16 +251,16 @@ button.make-shop-top {
 	margin-bottom: 60px;
 	width: 360px;
 }
-/*
+
 .gallery figure:nth-child(3n) {
 	margin-right: 0;
 }
-*/
-/*@media (min-width: 1450px) {*/
+
+/*@media (min-width: 1450px) {
 	.gallery figure:nth-child(3n) {
 		margin-right: 0;
 	}
-/*}*/
+}*/
 .gallery img {	
 	height: 240px;	
 }
