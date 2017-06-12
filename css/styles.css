@@ -14,6 +14,9 @@
 abbr {
 	text-decoration: none;
 }
+.education-block ul {
+	padding-left: 0px;
+}
 .education-block li {
-	list-style: none;
+	list-style: none;	
 }
