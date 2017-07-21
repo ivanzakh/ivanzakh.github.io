@@ -1,0 +1,8 @@
+.game {
+	width: 300px;
+	margin: auto;
+}
+
+#canvas {
+	border: 1px solid black;		
+}

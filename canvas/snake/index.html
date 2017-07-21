@@ -3,23 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Змейка</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
-	<canvas id="canvas" width="400" height="400"></canvas>
+<body>	
+	<div class="game">
+		<canvas id="canvas" width="300" height="400"></canvas>	
+	</div>	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
-	// 1. Цветная змейка
-	// 2. Постепенное увеличение скорости
-	/*
-	var animationTime = 100;
-	var gameLoop = function () {
-		...
-		setTimeout(gameLoop, animationTime);
-	};
-	gameLoop();
-	*/
-	// 3. Исправление apple.move через цикл
-
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
 		var width = canvas.width;
@@ -29,15 +20,7 @@
 		var widthInBlocks = width / blockSize;
 		var heightInBlocks = height / blockSize;
 
-		var score = 0;
-
-		var drawBorder = function () {
-			ctx.fillStyle = "Gray";
-			ctx.fillRect(0, 0, width, blockSize);
-			ctx.fillRect(0, height - blockSize, width, blockSize);
-			ctx.fillRect(0, 0, blockSize, height);
-			ctx.fillRect(width - blockSize, 0, blockSize, height);
-		};
+		var score = 0;		
 
 		var drawScore = function () {
 			ctx.font = "20px Courier";
@@ -47,13 +30,13 @@
 			ctx.fillText("Счет: " + score, blockSize, blockSize);
 		};
 
-		var gameOver = function () {
-			clearInterval(intervalId);
-			ctx.font = "60px Courier";
+		var gameOver = function () {			
+			ctx.font = "44px Courier";
 			ctx.fillStyle = "Black";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "middle";
-			ctx.fillText("ПОТРАЧЕНО", width / 2, height / 2);
+			ctx.fillText("Конец игры", width / 2, height / 2);
+			nextStep = false;
 		};
 
 		var circle = function (x, y, radius, fillCircle) {
@@ -100,9 +83,9 @@
 			this.nextDirection = "right";
 		};
 
-		Snake.prototype.draw = function () {
-			for (var i = 0; i < this.segments.length; i++) {
-				this.segments[i].drawSquare("Blue");
+		Snake.prototype.draw = function (color1, color2) {			
+			for (var i = 0; i < this.segments.length; i++) {				
+				this.segments[i].drawSquare((i % 2 == 0) ? color1 : color2);
 			}
 		};
 
@@ -131,17 +114,20 @@
 
 			if (newHead.equal(apple.position)) {
 				score++;
-				apple.move();
+				animationTime--;
+				while (this.checkCollision(apple.position)) {
+					apple.move();
+				}				
 			} else {
 				this.segments.pop();
 			}
 		};
 
 		Snake.prototype.checkCollision = function (head) {
-			var leftCollision = (head.col === 0);
-			var topCollision = (head.row === 0);
-			var rightCollision = (head.col === widthInBlocks - 1);
-			var bottomCollision = (head.row === heightInBlocks - 1);
+			var leftCollision = (head.col === -1);
+			var topCollision = (head.row === -1);
+			var rightCollision = (head.col === widthInBlocks);
+			var bottomCollision = (head.row === heightInBlocks);
 
 			var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
 
@@ -172,7 +158,7 @@
 		};
 
 		Apple.prototype.draw = function () {
-			this.position.drawCircle("LimeGreen");
+			this.position.drawCircle("Tomato");
 		};
 
 		Apple.prototype.move = function () {
@@ -183,15 +169,20 @@
 
 		var snake = new Snake();
 		var apple = new Apple();
+		var nextStep = true;
+		var colors = ['LightBlue', 'Gold'];			
 
-		var intervalId = setInterval(function () {
+		var animationTime = 150;
+		var gameLoop = function () {
 			ctx.clearRect(0, 0, width, height);
 			drawScore();
-			snake.move();
-			snake.draw();
-			apple.draw();
-			drawBorder();
-		}, 100);
+			snake.move();			
+			snake.draw(colors[0], colors[1]);
+			apple.draw();			
+			colors.reverse();
+			if (nextStep) setTimeout(gameLoop, animationTime);				
+		};
+		gameLoop();
 
 		var directions = {
 			37: "left",
@@ -201,9 +192,8 @@
 		};
 
 		$("body").keydown(function (event) {
-			var newDirection = directions[event.keyCode];
-			//if (newDirection) {
-			if (newDirection !== undefined) { 
+			var newDirection = directions[event.keyCode];			
+			if (newDirection) { 
 				snake.setDirection(newDirection);
 			}
 		});
