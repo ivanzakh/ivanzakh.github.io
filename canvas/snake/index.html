@@ -85,7 +85,7 @@
 
 		Snake.prototype.draw = function (color1, color2) {			
 			for (var i = 0; i < this.segments.length; i++) {				
-				this.segments[i].drawSquare((i % 2 == 0) ? color1 : color2);
+				this.segments[i].drawSquare((i % 2 === 0) ? color1 : color2);
 			}
 		};
 
