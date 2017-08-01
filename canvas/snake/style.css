@@ -7,3 +7,19 @@
 	border: 1px solid black;
 	margin: auto;
 }
+.controls {
+	width: 100%;	
+	text-align: center;			
+}
+.controls td {	
+	padding: 10px;		
+}
+.button {
+	width: 100px;
+	height: 100px;
+	margin: auto;	
+	border-radius: 100%;
+}
+.fa {
+	font-size: 100px;
+}
