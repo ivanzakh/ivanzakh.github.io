@@ -82,7 +82,7 @@
 			ctx.fillStyle = backgroundColor;
 			ctx.fillRect(x + 4, y + 4, blockSize - 8, blockSize - 8);
 			ctx.fillStyle = color;
-			ctx.fillRect(x + 8, y + 8, blockSize - 16, blockSize - 16);			
+			ctx.fillRect(x + 9, y + 9, blockSize - 18, blockSize - 18);
 		};
 		Block.prototype.drawCircle = function (color) {
 			var centerX = this.col * blockSize + blockSize / 2;
@@ -127,7 +127,7 @@
 			this.segments.unshift(newHead);
 			if (newHead.equal(apple.position)) {
 				score++;
-				if (score % 10 == 0) animationTime -= 10;
+				if (score % 10 === 0) animationTime -= 10;
 				while (this.checkCollision(apple.position)) {
 					apple.move();
 				}				
