@@ -1,8 +1,7 @@
 .game {
-	width: 600px;
+	width: 300px;
 	margin: auto;
 }
-
-#canvas {
-	border: 1px solid black;		
+#canvas {	
+	border: 1px solid black;
 }
