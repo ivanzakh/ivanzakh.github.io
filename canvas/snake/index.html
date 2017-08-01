@@ -13,18 +13,18 @@
 	<table class="controls">
 		<tr>
 			<td rowspan="2">
-				<div class="button button-left"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
+				<div id="button-left" class="button"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
 			</td>
 			<td>
-				<div class="button button-up"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+				<div id="button-up" class="button"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
 			</td>
 			<td rowspan="2">
-				<div class="button button-right"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+				<div id="button-right" class="button"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
 			</td>
 		</tr>
 		<tr>			
 			<td>
-				<div class="button button-down"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+				<div id="button-down" class="button"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
 			</td>			
 		</tr>
 	</table>	
@@ -202,16 +202,16 @@
 				snake.setDirection(newDirection);
 			}
 		});	
-		$('.button-left').click(function() {
+		$('#button-left').click(function() {
 			snake.setDirection('left');
 		});	
-		$('.button-up').click(function() {
+		$('#button-up').click(function() {
 			snake.setDirection('up');
 		});	
-		$('.button-right').click(function() {
+		$('#button-right').click(function() {
 			snake.setDirection('right');
 		});	
-		$('.button-down').click(function() {
+		$('#button-down').click(function() {
 			snake.setDirection('down');
 		});	
 	</script>
