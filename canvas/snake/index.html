@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="game">	
-	<canvas id="canvas" width="600" height="800"></canvas>		
+	<canvas id="canvas" width="720" height="720"></canvas>		
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
@@ -59,11 +59,11 @@
 			ctx.fillStyle = backgroundColor;
 			ctx.fillRect(x, y, blockSize, blockSize);
 			ctx.fillStyle = color;
-			ctx.fillRect(x + 2, y + 2, blockSize - 2, blockSize - 2);
+			ctx.fillRect(x + 2, y + 2, blockSize - 4, blockSize - 4);
 			ctx.fillStyle = backgroundColor;
-			ctx.fillRect(x + 4, y + 4, blockSize - 6, blockSize - 6);
+			ctx.fillRect(x + 3, y + 3, blockSize - 6, blockSize - 6);
 			ctx.fillStyle = color;
-			ctx.fillRect(x + 6, y + 6, blockSize - 10, blockSize - 10);			
+			ctx.fillRect(x + 7, y + 7, blockSize - 14, blockSize - 14);			
 		};
 		Block.prototype.drawCircle = function (color) {
 			var centerX = this.col * blockSize + blockSize / 2;
@@ -155,14 +155,16 @@
 		var nextStep = true;
 		var colors = ['LightBlue', 'Gold'];			
 		var animationTime = 150;
-		var gameLoop = function () {
-			ctx.clearRect(0, 0, width, height);			
-			drawBackground();
-			snake.move();			
-			snake.draw(colors[0], colors[1]);
-			apple.draw();			
-			colors.reverse();
-			if (nextStep) setTimeout(gameLoop, animationTime);				
+		var gameLoop = function () {			
+			snake.move();				
+			if (nextStep) {
+				ctx.clearRect(0, 0, width, height);			
+				drawBackground();
+				snake.draw(colors[0], colors[1]);
+				apple.draw();			
+				colors.reverse();
+				setTimeout(gameLoop, animationTime);
+			} 
 		};
 		gameLoop();
 		var directions = {
@@ -180,7 +182,7 @@
 			if (newDirection) { 
 				snake.setDirection(newDirection);
 			}
-		});
+		});		
 	</script>
 </body>	
 </html>
