@@ -1,7 +1,10 @@
 .game {
-	width: 300px;
-	margin: auto;
+	display: flex;
+	width: 90%;
+	height: 90%;	
+	margin-left: 5%;	
 }
 #canvas {	
 	border: 1px solid black;
+	margin: auto;
 }
