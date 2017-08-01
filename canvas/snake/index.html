@@ -3,12 +3,31 @@
 <head>
 	<meta charset="utf-8">
 	<title>Змейка</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">	
 </head>
 <body>
 	<div class="game">	
-	<canvas id="canvas" width="900" height="900"></canvas>		
+		<canvas id="canvas" width="900" height="900"></canvas>	
 	</div>
+	<table class="controls">
+		<tr>
+			<td rowspan="2">
+				<div class="button button-left"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
+			</td>
+			<td>
+				<div class="button button-up"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+			</td>
+			<td rowspan="2">
+				<div class="button button-right"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+			</td>
+		</tr>
+		<tr>			
+			<td>
+				<div class="button button-down"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+			</td>			
+		</tr>
+	</table>	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 		var canvas = document.getElementById("canvas");		
@@ -182,7 +201,19 @@
 			if (newDirection) { 
 				snake.setDirection(newDirection);
 			}
-		});		
+		});	
+		$('.button-left').click(function() {
+			snake.setDirection('left');
+		});	
+		$('.button-up').click(function() {
+			snake.setDirection('up');
+		});	
+		$('.button-right').click(function() {
+			snake.setDirection('right');
+		});	
+		$('.button-down').click(function() {
+			snake.setDirection('down');
+		});	
 	</script>
 </body>	
 </html>
