@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="game">	
-	<canvas id="canvas" width="720" height="720"></canvas>		
+	<canvas id="canvas" width="900" height="900"></canvas>		
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
@@ -59,11 +59,11 @@
 			ctx.fillStyle = backgroundColor;
 			ctx.fillRect(x, y, blockSize, blockSize);
 			ctx.fillStyle = color;
-			ctx.fillRect(x + 2, y + 2, blockSize - 4, blockSize - 4);
-			ctx.fillStyle = backgroundColor;
 			ctx.fillRect(x + 3, y + 3, blockSize - 6, blockSize - 6);
+			ctx.fillStyle = backgroundColor;
+			ctx.fillRect(x + 4, y + 4, blockSize - 8, blockSize - 8);
 			ctx.fillStyle = color;
-			ctx.fillRect(x + 7, y + 7, blockSize - 14, blockSize - 14);			
+			ctx.fillRect(x + 9, y + 9, blockSize - 18, blockSize - 18);			
 		};
 		Block.prototype.drawCircle = function (color) {
 			var centerX = this.col * blockSize + blockSize / 2;
