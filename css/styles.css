@@ -84,18 +84,15 @@ header a {
   display: block;
   color: #3498db;
   padding: 10px;
+  transition: .25s;
 }
 header a:hover {
-  color: #fff;
-  background-color: #3498db;
-  text-decoration: none;  
-  border-radius: 15px;
+  color: #67ca00;  
+  text-decoration: none;    
 }
 header a:focus {
-  color: #fff;
-  background-color: #3498db;
-  text-decoration: none;
-  border-radius: 15px;
+  color: #67ca00;  
+  text-decoration: none;  
   outline: none;
 }
 header.active {
