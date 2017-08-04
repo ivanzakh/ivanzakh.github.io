@@ -87,11 +87,11 @@ header a {
   transition: .25s;
 }
 header a:hover {
-  color: #ffdead;  
+  color: #ffb958;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #ffdead;  
+  color: #ffb958;  
   text-decoration: none;  
   outline: none;
 }
@@ -117,7 +117,7 @@ header.sticky {
   position: fixed;
   right: 15px;
   top: 10px;
-  color: #3498db;
+  color: #4682b4;
   font-size: 1.5em;
   z-index: 20;
   padding: 0 7px;
@@ -133,7 +133,7 @@ header.sticky {
   padding-right: 15px;
   padding-top: 10px;
   cursor: pointer;
-  color: #3498db;
+  color: #4682b4;
 }
 #mobile-menu-close span {
   font-size: 0.5em;
@@ -187,7 +187,7 @@ footer {
   transition: .25s;
 }
 .social a:hover {
-  color: #4682b4;
+  color: #ffb958;
 }
 .btn-rounded-white {
   display: inline-block;
