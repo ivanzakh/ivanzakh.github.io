@@ -70,7 +70,7 @@ header {
 }
 header ul {
   display: inline-block;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .6);
   text-align: center;
   padding: 0 10px;
   margin: 0;
