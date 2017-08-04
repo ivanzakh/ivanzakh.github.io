@@ -82,7 +82,7 @@ header li {
 }
 header a {
   display: block;
-  color: #fff;
+  color: #f8f8ff;
   padding: 10px;
   transition: .25s;
 }
