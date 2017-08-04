@@ -1,5 +1,5 @@
 body {
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 17px;
 }
 body.active {
@@ -176,12 +176,12 @@ footer {
 }
 .social a {
   display: block;
-  color: #4282b4;
+  color: #74808a;
   padding: 10px;
   transition: .25s;
 }
 .social a:hover {
-  color: #00bfff;
+  color: #4282b4;
 }
 .btn-rounded-white {
   display: inline-block;
