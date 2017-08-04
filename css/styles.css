@@ -82,11 +82,11 @@ header li {
 }
 header a {
   display: block;
-  color: #fff;
+  color: #3498db;
   padding: 10px;
 }
 header a:hover {
-  color: #3498db;
+  color: #ffdead;
   text-decoration: none;  
   border-radius: 4px;
 }
