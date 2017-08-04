@@ -93,9 +93,12 @@ header a:hover {
 header a:focus {
   color: #ffdead;
   text-decoration: none;
+  outline: none;
 }
 header.active {
   display: block;
+  background: #fff;
+  color: #337ab7;
 }
 header.sticky {
   position: fixed;
