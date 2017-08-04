@@ -58,7 +58,7 @@ header {
   left: 0;
   right: 0;
   text-align: center;
-  z-index: 10;
+  z-index: 999;
   -webkit-animation-name: dropHeader;
   animation-name: dropHeader;
   -webkit-animation-iteration-count: 1;
@@ -70,9 +70,9 @@ header {
 }
 header ul {
   display: inline-block;
-  background: #fff;
+  background: rgba(255, 255, 255, .5);
   text-align: center;
-  padding: 10px;
+  padding: 10px 0;
   margin: 0;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -82,13 +82,12 @@ header li {
 }
 header a {
   display: block;
-  color: #3498db;
+  color: #fff;
   padding: 10px;
 }
 header a:hover {
-  color: #217dbb;
-  text-decoration: none;
-  background: #eee;
+  color: #ffdead;
+  text-decoration: none;  
   border-radius: 4px;
 }
 header a:focus {
