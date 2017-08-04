@@ -91,7 +91,7 @@ header a:hover {
   border-radius: 4px;
 }
 header a:focus {
-  color: #3498db;
+  color: #ffdead;
   text-decoration: none;
 }
 header.active {
