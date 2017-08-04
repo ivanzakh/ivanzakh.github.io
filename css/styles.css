@@ -84,7 +84,7 @@ header a {
   display: block;
   color: #4682b4;
   padding: 10px;
-  transition: .25s;
+  transition: .5s;
 }
 header a:hover {
   color: #00bfff;  
