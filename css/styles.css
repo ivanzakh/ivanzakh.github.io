@@ -96,16 +96,16 @@ header a:focus {
   outline: none;
 }
 header.active {
-  display: block;  
+  display: block;
+  background: #fff;
+  color: #4682b4;
 }
 header.sticky {
   position: fixed;
   z-index: 999;
 }
 #menu.active {
-  display: block;
-  background: #fff;
-  color: 4682b4;
+  display: block;  
 }
 #mobile-menu-open {
   display: none;
