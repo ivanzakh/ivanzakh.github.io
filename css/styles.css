@@ -87,11 +87,11 @@ header a {
   transition: .25s;
 }
 header a:hover {
-  color: #ff8a58;  
+  color: #ffbea3;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #ff8a58;  
+  color: #ffbea3;  
   text-decoration: none;  
   outline: none;
 }
@@ -187,7 +187,7 @@ footer {
   transition: .25s;
 }
 .social a:hover {
-  color: #ff8a58;
+  color: #ffbea3;
 }
 .btn-rounded-white {
   display: inline-block;
