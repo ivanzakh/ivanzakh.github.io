@@ -87,11 +87,11 @@ header a {
   transition: .25s;
 }
 header a:hover {
-  color: #67ca00;  
+  color: #ffdead;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #67ca00;  
+  color: #ffdead;  
   text-decoration: none;  
   outline: none;
 }
