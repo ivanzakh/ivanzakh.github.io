@@ -87,11 +87,11 @@ header a {
   transition: .25s;
 }
 header a:hover {
-  color: #ffb958;  
+  color: #ff8a58;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #ffb958;  
+  color: #ff8a58;  
   text-decoration: none;  
   outline: none;
 }
@@ -187,7 +187,7 @@ footer {
   transition: .25s;
 }
 .social a:hover {
-  color: #ffb958;
+  color: #ff8a58;
 }
 .btn-rounded-white {
   display: inline-block;
@@ -265,7 +265,7 @@ footer {
   line-height: 0.9em;
 }
 #lead-content h2 {
-  color: #ffb958;
+  color: #ffd658;
   font-weight: 500;
   font-size: 2.25em;
   margin-bottom: 15px;
