@@ -96,8 +96,12 @@ header a:focus {
   outline: none;
 }
 header.active {
-  display: block;
+  display: block;   
+}
+header.active ul {
   background: #fff;
+}
+header.active a {
   color: #4682b4;
 }
 header.sticky {
