@@ -82,16 +82,16 @@ header li {
 }
 header a {
   display: block;
-  color: #3498db;
+  color: #696969;
   padding: 10px;
   transition: .25s;
 }
 header a:hover {
-  color: #ffdead;  
+  color: #008080;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #ffdead;  
+  color: #008080;  
   text-decoration: none;  
   outline: none;
 }
