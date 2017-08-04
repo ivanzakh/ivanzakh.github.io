@@ -87,11 +87,11 @@ header a {
   transition: .25s;
 }
 header a:hover {
-  color: #008080;  
+  color: #00bfff;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #008080;  
+  color: #00bfff;  
   text-decoration: none;  
   outline: none;
 }
