@@ -731,6 +731,9 @@ footer {
   #lead-down {
     display: none;
   }
+  .heading {
+    margin: 0 0 30px 0;
+  }
   .education-block h3,
   .education-block span {
     float: none;
