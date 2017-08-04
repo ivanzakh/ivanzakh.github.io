@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-size: 17px;
 }
 body.active {
@@ -70,7 +70,7 @@ header {
 }
 header ul {
   display: inline-block;
-  background: #fff;
+  background: rgba(0, 0, 0, .6);
   text-align: center;
   padding: 0 10px;
   margin: 0;
@@ -82,16 +82,16 @@ header li {
 }
 header a {
   display: block;
-  color: #4682b4;
+  color: #fff;
   padding: 10px;
   transition: .25s;
 }
 header a:hover {
-  color: #00bfff;  
+  color: #ffdead;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #00bfff;  
+  color: #ffdead;  
   text-decoration: none;  
   outline: none;
 }
@@ -176,7 +176,7 @@ footer {
 }
 .social a {
   display: block;
-  color: #74808a;
+  color: #4282b4;
   padding: 10px;
   transition: .25s;
 }
