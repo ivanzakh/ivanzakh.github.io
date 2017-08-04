@@ -70,9 +70,9 @@ header {
 }
 header ul {
   display: inline-block;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(0, 0, 0, .5);
   text-align: center;
-  padding: 10px 0;
+  padding: 0 10px;
   margin: 0;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
