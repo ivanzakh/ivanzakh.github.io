@@ -84,14 +84,14 @@ header a {
   display: block;
   color: #4682b4;
   padding: 10px;
-  transition: .5s;
+  transition: .25s;
 }
 header a:hover {
-  color: #00bfff;  
+  color: #1e90ff;  
   text-decoration: none;    
 }
 header a:focus {
-  color: #00bfff;  
+  color: #1e90ff;  
   text-decoration: none;  
   outline: none;
 }
@@ -178,9 +178,10 @@ footer {
   display: block;
   color: #74808a;
   padding: 10px;
+  transition: .25s;
 }
 .social a:hover {
-  color: #3498db;
+  color: #1e90ff;
 }
 .btn-rounded-white {
   display: inline-block;
