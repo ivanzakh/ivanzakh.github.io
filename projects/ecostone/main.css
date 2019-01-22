@@ -31,3 +31,38 @@ td {
     border: 1px solid black;
     text-align: center;
 }
+
+.use {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.use__card {
+    max-width: 33%;
+}
+
+.catalog__card {
+    display: flex;
+    margin-bottom: 40px;
+    border: 1px solid #d2d1d1;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.catalog__img {
+    width: 358px;
+}
+
+.catalog__info {
+    margin-left: 40px;
+}
+
+.docs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.docs__img {
+    height: 500px;
+}
