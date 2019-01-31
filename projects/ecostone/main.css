@@ -79,10 +79,6 @@ td {
   text-align: center;
 }
 
-.advantages ul {
-  padding: 0;
-}
-
 .advantages li {
   list-style: none;
   margin-bottom: 20px;
@@ -153,6 +149,10 @@ td {
   header .container {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .advantages ul {
+    padding: 0;
   }
 
   .catalog__card {
