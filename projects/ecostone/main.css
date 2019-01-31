@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 80px 0 0;
+  line-height: 1.5rem;
 }
 
 .container {
@@ -10,11 +11,13 @@ body {
 }
 
 .section__title {
+  width: 100%;
   color: #333;
   font-size: 36px;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
+  line-height: 1.5em;
 }
 
 .section__description {
@@ -74,6 +77,10 @@ td {
   text-align: center;
 }
 
+.advantages ul {
+  padding: 0;
+}
+
 .advantages li {
   list-style: none;
   margin-bottom: 20px;
@@ -90,7 +97,9 @@ td {
 }
 
 .use__card {
-  max-width: 33%;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
 }
 
 .catalog {
@@ -105,17 +114,34 @@ td {
   border: 1px solid #d2d1d1;
   border-radius: 15px;
   padding: 20px;
+  text-align: center;
 }
 
 .catalog__img {
   height: 160px;
 }
 
+.catalog__info {
+  text-align: left;
+}
+
 .docs {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .docs__img {
-  height: 500px;
+  height: 400px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 716px) {
+  .catalog__card {
+    width: 100%;
+    margin-right: 0;
+  }
 }
