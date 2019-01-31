@@ -141,6 +141,15 @@ td {
 }
 
 @media (max-width: 716px) {
+  body {
+    margin-top: 0;
+  }
+
+  header {
+    position: initial;
+    box-shadow: none;
+  }
+
   header .container {
     flex-wrap: wrap;
     justify-content: center;
