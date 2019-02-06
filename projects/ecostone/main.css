@@ -195,8 +195,9 @@ td {
   }
 
   .offer__card {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 20px 0 0;
+    font-size: 20px;
+    line-height: 28px;
   }
 
   .advantages ul {
