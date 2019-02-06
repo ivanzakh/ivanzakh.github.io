@@ -194,20 +194,12 @@ td {
 }
 
 @media (min-width: 716px) {
-  .comparison__table {
-    display: table;
-    width: 100%;
-  }
-  
   .comparison__row {
     display: table-row;
   }
   
   .comparison__cell {
     display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px;
   }
   
   .comparison__cell--eco,
@@ -233,7 +225,7 @@ td {
 
   .section__title {
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .offer {
