@@ -692,13 +692,14 @@ footer {
     /* min-height: auto; */
     /* max-height: auto; */
     padding: 100px 15px;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
   }
   #lead-content {
     position: relative;
     -webkit-transform: none;
     transform: none;
     left: auto;
-    /* top:auto; */
   }
   #lead-content h1 {
     font-size: 3em;
