@@ -237,7 +237,7 @@ footer {
   height: 100vh;
   min-height: 500px;
   max-height: 1080px;
-  background: url(../images/lead-bg.jpg);
+  /* background: url(../images/lead-bg.jpg); */
   background-size: cover;
   background-position: center;
   padding: 15px;
@@ -255,17 +255,19 @@ footer {
 #lead-content h1,
 #lead-content h2 {
   margin: 0;
+  white-space: nowrap;
 }
 #lead-content h1 {
-  color: #fff;
+  color: #a0cfee;
   font-weight: 900;
   font-size: 5em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 0.9em;
+  margin-bottom: 12px;
 }
 #lead-content h2 {
-  color: #FFEAA8;
+  color: #999;
   font-weight: 500;
   font-size: 2.25em;
   margin-bottom: 15px;
@@ -278,7 +280,8 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(47, 70, 79, 0.8);
+  /* background: rgba(47, 70, 79, 0.8); */
+  background-color: #f2f2f5;
   z-index: 1;
 }
 #lead-down {
@@ -289,7 +292,7 @@ footer {
   text-align: center;
   z-index: 10;
   bottom: 15px;
-  color: #fff;
+  color: #999;
 }
 #lead-down span {
   cursor: pointer;
@@ -685,9 +688,9 @@ footer {
 }
 @media only screen and (max-width: 992px) {
   #lead {
-    height: auto;
-    min-height: auto;
-    max-height: auto;
+    /* height: auto; */
+    /* min-height: auto; */
+    /* max-height: auto; */
     padding: 100px 15px;
   }
   #lead-content {
@@ -695,7 +698,7 @@ footer {
     -webkit-transform: none;
     transform: none;
     left: auto;
-    top:auto;
+    /* top:auto; */
   }
   #lead-content h1 {
     font-size: 3em;
@@ -745,7 +748,7 @@ footer {
     padding: 10px 20px;
   }
   #lead-down {
-    display: none;
+    /* display: none; */
   }
   .education-block h3,
   .education-block span {
