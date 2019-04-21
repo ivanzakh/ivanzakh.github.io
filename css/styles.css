@@ -700,6 +700,7 @@ footer {
     -webkit-transform: none;
     transform: none;
     left: auto;
+    top: 40%;
   }
   #lead-content h1 {
     font-size: 3em;
