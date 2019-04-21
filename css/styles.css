@@ -235,7 +235,7 @@ footer {
 #lead {
   position: relative;
   height: 100vh;
-  min-height: 500px;
+  min-height: 300px;
   max-height: 1080px;
   /* background: url(../images/lead-bg.jpg); */
   background-size: cover;
