@@ -1,64 +1,64 @@
-(function($) {
+(function ($) {
 
-    // Remove no-js class
-    $('html').removeClass('no-js');
+  // Remove no-js class
+  $('html').removeClass('no-js');
 
-    // Animate to section when nav is clicked
-    $('header a').click(function(e) {
+  // Animate to section when nav is clicked
+  $('header a').click(function (e) {
 
-        // Treat as normal link if no-scroll class
-        if ($(this).hasClass('no-scroll')) return;
+    // Treat as normal link if no-scroll class
+    if ($(this).hasClass('no-scroll')) return;
 
-        e.preventDefault();
-        var heading = $(this).attr('href');
-        var scrollDistance = $(heading).offset().top;
+    e.preventDefault();
+    var heading = $(this).attr('href');
+    var scrollDistance = $(heading).offset().top;
 
-        $('html, body').animate({
-            scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 3);
+    $('html, body').animate({
+      scrollTop: scrollDistance + 'px'
+    }, Math.abs(window.pageYOffset - $(heading).offset().top) / 3);
 
-        // Hide the menu once clicked if mobile
-        if ($('header').hasClass('active')) {
-            $('header, body').removeClass('active');
-        }
+    // Hide the menu once clicked if mobile
+    if ($('header').hasClass('active')) {
+      $('header, body').removeClass('active');
+    }
+  });
+
+  // Scroll to top
+  $('#to-top').click(function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 500);
+  });
+
+  // Scroll to first element
+  $('#lead-down').on('click', 'span', function () {
+    var scrollDistance = $('#lead').next().offset().top;
+    // $('html, body').animate({
+    //     scrollTop: scrollDistance + 'px'
+    // }, 500);
+    window.scrollTo({
+      top: scrollDistance,
+      behavior: "smooth"
     });
-
-    // Scroll to top
-    $('#to-top').click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
-    });
-
-    // Scroll to first element
-    $('#lead-down').on('click', 'span', function() {
-        var scrollDistance = $('#lead').next().offset().top;
-        // $('html, body').animate({
-        //     scrollTop: scrollDistance + 'px'
-        // }, 500);
-        window.scrollTo({
-          top: scrollDistance,
-          behavior: "smooth"
-      });
-    });
+  });
 
   var header = $("header"); // Меню
   var scrollPrev = 0; // Предыдущее значение скролла
 
-  $(window).on('scroll', function(){
+  $(window).on('scroll', function () {
     var scrolled = $(window).scrollTop(); // Высота скролла в px
     var firstScrollUp = false; // Параметр начала сколла вверх
     var firstScrollDown = false; // Параметр начала сколла вниз
 
     // Если скроллим
-    if ( scrolled > 0 ) {
+    if (scrolled > 0) {
       // Если текущее значение скролла > предыдущего, т.е. скроллим вниз
-      if ( scrolled > scrollPrev ) {
+      if (scrolled > scrollPrev) {
         firstScrollUp = false; // Обнуляем параметр начала скролла вверх
         // Если меню видно
-        if ( scrolled < header.height() + header.offset().top ) {
+        if (scrolled < header.height() + header.offset().top) {
           // Если только начали скроллить вниз
-          if ( firstScrollDown === false ) {
+          if (firstScrollDown === false) {
             var topPosition = header.offset().top; // Фиксируем текущую позицию меню
             header.css({
               "top": topPosition + "px"
@@ -82,9 +82,9 @@
       } else {
         firstScrollDown = false; // Обнуляем параметр начала скролла вниз
         // Если меню не видно
-        if ( scrolled > header.offset().top ) {
+        if (scrolled > header.offset().top) {
           // Если только начали скроллить вверх
-          if ( firstScrollUp === false ) {
+          if (firstScrollUp === false) {
             var topPosition = header.offset().top; // Фиксируем текущую позицию меню
             header.css({
               "top": topPosition + "px"
@@ -125,49 +125,49 @@
     }
   }*/
 
-    // Create timeline
-    $('#experience-timeline').each(function() {
+  // Create timeline
+  $('#experience-timeline').each(function () {
 
-        $this = $(this); // Store reference to this
-        $userContent = $this.children('div'); // user content
+    $this = $(this); // Store reference to this
+    $userContent = $this.children('div'); // user content
 
-        // Create each timeline block
-        $userContent.each(function() {
-            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
-        });
-
-        // Add icons to each block
-        $this.find('.vtimeline-point').each(function() {
-            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
-        });
-
-        // Add dates to the timeline if exists
-        $this.find('.vtimeline-content').each(function() {
-            var date = $(this).data('date');
-            if (date) { // Prepend if exists
-                $(this).parent().prepend('<span class="vtimeline-date">'+date+'</span>');
-            }
-        });
-
+    // Create each timeline block
+    $userContent.each(function () {
+      $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
     });
 
-    // Open mobile menu
-    $('#mobile-menu-open').click(function() {
-        $('header, body').addClass('active');
+    // Add icons to each block
+    $this.find('.vtimeline-point').each(function () {
+      $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
     });
 
-    // Close mobile menu
-    $('#mobile-menu-close').click(function() {
-        $('header, body').removeClass('active');
+    // Add dates to the timeline if exists
+    $this.find('.vtimeline-content').each(function () {
+      var date = $(this).data('date');
+      if (date) { // Prepend if exists
+        $(this).parent().prepend('<span class="vtimeline-date">' + date + '</span>');
+      }
     });
 
-    // Load additional projects
-    $('#view-more-projects').click(function(e){
-        e.preventDefault();
-        $(this).fadeOut(300, function() {
-            $('#more-projects').fadeIn(300);
-        });
+  });
+
+  // Open mobile menu
+  $('#mobile-menu-open').click(function () {
+    $('header, body').addClass('active');
+  });
+
+  // Close mobile menu
+  $('#mobile-menu-close').click(function () {
+    $('header, body').removeClass('active');
+  });
+
+  // Load additional projects
+  $('#view-more-projects').click(function (e) {
+    e.preventDefault();
+    $(this).fadeOut(300, function () {
+      $('#more-projects').fadeIn(300);
     });
+  });
 
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
@@ -187,14 +187,14 @@
         "value": 80,
         "density": {
           "enable": true,
-          "value_area": 400
+          "value_area": 800
         }
       },
       "color": {
         "value": "#000000"
       },
       "shape": {
-        "type": "circle",
+        "type": "triangle",
         "stroke": {
           "width": 0,
           "color": "#000000"
@@ -219,7 +219,7 @@
         }
       },
       "size": {
-        "value": 0,
+        "value": 2,
         "random": true,
         "anim": {
           "enable": false,
@@ -231,13 +231,13 @@
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#999",
+        "color": "#000000",
         "opacity": 0.4,
         "width": 1
       },
       "move": {
         "enable": true,
-        "speed": 1,
+        "speed": 3,
         "direction": "none",
         "random": false,
         "straight": false,
@@ -298,6 +298,6 @@
     }
   }
 
-);
+  );
 
 })(jQuery);
