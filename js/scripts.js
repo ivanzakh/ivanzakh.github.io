@@ -187,7 +187,7 @@
         "value": 80,
         "density": {
           "enable": true,
-          "value_area": 600
+          "value_area": 400
         }
       },
       "color": {
@@ -230,7 +230,7 @@
       },
       "line_linked": {
         "enable": true,
-        "distance": 150,
+        "distance": 100,
         "color": "#000000",
         "opacity": 0.4,
         "width": 1
@@ -264,7 +264,7 @@
       },
       "modes": {
         "grab": {
-          "distance": 150,
+          "distance": 100,
           "line_linked": {
             "opacity": 1
           }
