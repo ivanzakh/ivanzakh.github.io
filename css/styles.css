@@ -92,7 +92,7 @@ header a:hover {
   text-decoration: none;    
 }
 header a:focus {
-  color: #fafafa;
+  color: #757575;
   text-decoration: none;  
   outline: none;
 }
