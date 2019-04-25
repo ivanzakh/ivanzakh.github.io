@@ -60,12 +60,13 @@
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 justify-content-center">
                     <h2 class="heading">Обо мне</h2>
-                </div>
+                    <img class="avatar" src="images/avatar.jpg" alt="">
+                  </div>
                 <div class="col-md-8">
                     <p>
-                        Мой путь в веб начался с вёрстки. Сперва было просто интересно создать собственный сайт. Затем я стал брать заказы на разработку адаптивных сайтов. Спустя некоторое время начал понемногу осваивать JavaScript и решил выбрать своей специализацией фронтенд. Мне нравится создавать что-то новое, с красивым и удобным интерфейсом, приносящее пользу.
+                      Начал с верстки, какое-то время создавал адаптивные статические сайты на фрилансе. С февраля 2017 начал изучать JavaScript. На первой работе в роли фронтенд разработчика участвовал в создании ERP-системы на самописном фреймворке, в то же время начал свое знакомство с UI-фреймворками. Затем сменил работу и писал в основном на Angular, React, Redux, Typescript и Stylus. Работал над созданием порядка 10 веб-приложений на React и Angular в команде с бэкенд разработчиками и дизайнерами. В свободное время стараюсь развивать навыки фронтенд разработки (пишу собственные проекты в целях дальнейшего углубления знаний), также интересуюсь машинным обучением и разработкой игр. Мне нравится создавать что-то новое, с красивым и удобным интерфейсом, приносящее пользу.
                     </p>
                 </div>
             </div>
@@ -79,40 +80,16 @@
               <h3>Технократия</h3>
               <h4>Front End JavaScript Разработчик</h4>
               <p>
-                Разработка сайтов и веб-приложений.
+                Разработка клиентской части сайтов и веб-приложений.
               </p>
             </div>
 
             <div data-date="Май 2017 – Октябрь 2017">
-                <h3>БАРС Груп</h3>
-                <h4>Разработчик</h4>
-                <p>
-                    Разработка программного обеспечения.                    
-                </p>
-            </div>
-
-            <div data-date="Сентябрь 2016 – по настоящее время">
-                <h3>Фриланс</h3>
-                <h4>Web-разработчик</h4>
-                <p>
-                    Разработка сайтов.
-                </p>
-            </div>
-
-            <div data-date="Май 2014 – Октябрь 2015">
-                <h3>Радио-Точка</h3>
-                <h4>Администратор интернет-магазина</h4>
-                <p>
-                    Администрирование интернет-магазина.
-                </p>
-            </div>
-
-            <div data-date="Май 2013 – Август 2013">
-                <h3>СтройКрафт</h3>
-                <h4>Контент-менеджер</h4>
-                <p>
-                    Написание контента для сайта.
-                </p>
+              <h3>БАРС Груп</h3>
+              <h4>Разработчик</h4>
+              <p>
+                Разработка ERP-системы.                    
+              </p>
             </div>
         </div>
     </div>
@@ -133,12 +110,12 @@
             <li>TypeScript</li>
             <li>jQuery</li>
             <li>React</li>
+            <li>Redux</li>
             <li>Angular</li>
+            <li>Vue</li>
             <li>NPM</li>
             <li>Gulp</li>
             <li>Webpack</li>
-            <li>PHP</li>
-            <li>SQL</li>
         </ul>
     </div>
 
@@ -147,19 +124,20 @@
         <div class="container">
               <div class="row">
                 <div class="project shadow-large">
-                  <div class="project-image">
-                    <img src="images/snake.jpg" />
-                  </div>
-                  <div class="project-info">
-                    <h3>Snake</h3>
-                    <p>
-                      "Змейка", написанная на чистом JavaScript с использованием элемента Canvas. Обработка событий реализована при помощи библиотеки jQuery.
-                    </p>
-                    <a href="projects/snake/index.html" target="_blank">Смотреть проект</a>
-                  </div>
+                  <a href="projects/snake/index.html" target="_blank">
+                    <div class="project-image">
+                      <img src="images/snake.jpg" />
+                    </div>
+                    <div class="project-info">
+                      <h3>Snake</h3>
+                      <p>
+                        "Змейка", написанная на чистом JavaScript с использованием элемента Canvas. Обработка событий реализована при помощи библиотеки jQuery.
+                      </p>
+                    </div>
+                  </a>
                 </div>
 
-                <div class="project shadow-large">
+                <!-- <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/handmade.jpg" />
                     </div>
@@ -170,22 +148,24 @@
                         </p>
                         <a href="projects/handmade/index.html" target="_blank">Смотреть проект</a>
                     </div>
-                </div>
+                </div> -->
 
+                
                 <div class="project shadow-large">
+                  <a href="http://makingcakes.github.io" target="_blank">
                     <div class="project-image">
-                        <img src="images/arichan.jpg" />
+                      <img src="images/arichan.jpg" />
                     </div>
                     <div class="project-info">
-                        <h3>MakingCakes</h3>
-                        <p>
-                            Разработка сайта-каталога по продаже тортиков ручной работы (HTML, CSS, Bootstrap, Jekyll, CloudCannon).
-                        </p>
-                        <a href="http://makingcakes.github.io" target="_blank">Смотреть проект</a>
+                      <h3>MakingCakes</h3>
+                      <p>
+                        Разработка сайта-каталога по продаже тортиков ручной работы (HTML, CSS, Bootstrap, Jekyll, CloudCannon).
+                      </p>
                     </div>
+                  </a>
                 </div>
 
-                <div class="project shadow-large">
+                <!-- <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/topp-taxi.jpg" />
                     </div>
@@ -196,7 +176,7 @@
                         </p>
                         <a href="http://topp-taxi.de" target="_blank">Смотреть проект</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -218,7 +198,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy 2018 ИВАН ЗАХАРОВ
+                        Copyright &copy 2019 Ivan Zakharov
                     </p>
                 </div>
                 <div class="col-sm-2 top">
