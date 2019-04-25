@@ -70,7 +70,7 @@ header {
 }
 header ul {
   display: inline-block;
-  background: #757575;
+  background: #fafafa;
   text-align: center;
   padding: 0 10px;
   margin: 0;
@@ -82,13 +82,13 @@ header li {
 }
 header a {
   display: block;
-  color: #fafafa;
+  color: #757575;
+  font-weight: 500;
   padding: 8px 20px;
-  transition: 0.2s text-shadow ease-in-out, 0.2s color ease-in-out;
+  transition: 0.2s color ease-in-out;
 }
 header a:hover {
-  color: #fff;
-  text-shadow: 0 0 4px white;
+  color: #5493C7;
   text-decoration: none;    
 }
 header a:focus {
