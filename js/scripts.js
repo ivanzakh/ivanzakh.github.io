@@ -1,5 +1,7 @@
 (function ($) {
 
+  let headerLock = false;
+
   // Remove no-js class
   $('html').removeClass('no-js');
 
@@ -13,9 +15,16 @@
     var heading = $(this).attr('href');
     var scrollDistance = $(heading).offset().top;
 
+    $('header').css({
+      "position": "fixed",
+      "top": "-" + (header.height() + 10) + "px"
+    });
+
+    headerLock = true;
+
     $('html, body').animate({
       scrollTop: scrollDistance + 'px'
-    }, Math.abs(window.pageYOffset - $(heading).offset().top) / 3);
+    }, Math.abs(window.pageYOffset - $(heading).offset().top) / 3, 'swing', () => headerLock = false);
 
     // Hide the menu once clicked if mobile
     if ($('header').hasClass('active')) {
@@ -51,7 +60,7 @@
     var firstScrollDown = false; // Параметр начала сколла вниз
 
     // Если скроллим
-    if (scrolled > 0) {
+    if (scrolled > 0 && !headerLock) {
       // Если текущее значение скролла > предыдущего, т.е. скроллим вниз
       if (scrolled > scrollPrev) {
         firstScrollUp = false; // Обнуляем параметр начала скролла вверх
@@ -74,7 +83,7 @@
           // Позиционируем меню фиксированно вне экрана
           header.css({
             "position": "fixed",
-            "top": "-" + header.height() + "px"
+            "top": "-" + (header.height() + 10) + "px"
           });
         }
 
