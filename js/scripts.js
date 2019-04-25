@@ -253,7 +253,7 @@
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": false,
+          "enable": true,
           "mode": "grab"
         },
         "onclick": {
@@ -264,7 +264,7 @@
       },
       "modes": {
         "grab": {
-          "distance": 130,
+          "distance": 150,
           "line_linked": {
             "opacity": 1
           }

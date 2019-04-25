@@ -1,0 +1,14 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+canvas {
+	background-color: black;
+	transition: 0.3s filter ease-out;
+	filter: blur(10px);
+}
+
+canvas:focus {
+	filter: none;
+}
