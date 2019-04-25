@@ -87,14 +87,14 @@ header a {
   padding: 8px 20px;
   transition: 0.2s color ease-in-out;
 }
-header a:hover {
-  color: #5493C7;
-  text-decoration: none;    
-}
 header a:focus {
   color: #757575;
   text-decoration: none;  
   outline: none;
+}
+header a:hover {
+  color: #5493C7;
+  text-decoration: none;    
 }
 header.active {
   display: block;   
