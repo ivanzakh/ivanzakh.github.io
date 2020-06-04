@@ -135,9 +135,9 @@ Apple.prototype.move = function () {
 
 const snake = new Snake()
 const apple = new Apple()
-let nextStep = true
 const colors = ['LightBlue', 'Gold']
-const animationTime = 150
+let nextStep = true
+let animationTime = 150
 
 function gameLoop() {
 	snake.move()
