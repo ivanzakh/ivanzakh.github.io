@@ -1,48 +1,34 @@
-var canvas = document.getElementById('canvas')
-var ctx = canvas.getContext('2d')
-var width = canvas.width
-var height = canvas.height
-var blockSize = width / 30
-var widthInBlocks = width / blockSize
-var heightInBlocks = height / blockSize
-var backgroundColor = 'DimGray'
-var score = 0
-var drawScore = function () {
+const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
+const width = canvas.width
+const height = canvas.height
+const blockSize = width / 30
+const widthInBlocks = width / blockSize
+const heightInBlocks = height / blockSize
+const backgroundColor = 'DimGray'
+let score = 0
+
+function drawScore() {
 	ctx.font = '20px sans-serif'
 	ctx.fillStyle = 'White'
 	ctx.textAlign = 'left'
 	ctx.textBaseline = 'top'
 	ctx.fillText('Score: ' + score, blockSize, blockSize)
 }
-var drawBackground = function () {
+
+function drawBackground() {
 	ctx.fillStyle = backgroundColor
 	ctx.fillRect(0, 0, width, height)
 }
-var gameOver = function () {
-	ctx.font = '44px sans-serif'
-	ctx.fillStyle = 'White'
-	ctx.textAlign = 'center'
-	ctx.textBaseline = 'middle'
-	ctx.fillText('Game Over', width / 2, height / 2)
-	drawScore()
-	nextStep = false
-}
-var circle = function (x, y, radius, fillCircle) {
-	ctx.beginPath()
-	ctx.arc(x, y, radius, 0, Math.PI * 2, false)
-	if (fillCircle) {
-		ctx.fill()
-	} else {
-		ctx.stroke()
-	}
-}
-var Block = function (col, row) {
+
+function Block(col, row) {
 	this.col = col
 	this.row = row
 }
+
 Block.prototype.drawSquare = function (color) {
-	var x = this.col * blockSize
-	var y = this.row * blockSize
+	const x = this.col * blockSize
+	const y = this.row * blockSize
 	ctx.fillStyle = backgroundColor
 	ctx.fillRect(x, y, blockSize, blockSize)
 	ctx.fillStyle = color
@@ -52,28 +38,33 @@ Block.prototype.drawSquare = function (color) {
 	ctx.fillStyle = color
 	ctx.fillRect(x + 9, y + 9, blockSize - 18, blockSize - 18)
 }
+
 Block.prototype.drawCircle = function (color) {
-	var centerX = this.col * blockSize + blockSize / 2
-	var centerY = this.row * blockSize + blockSize / 2
+	const centerX = this.col * blockSize + blockSize / 2
+	const centerY = this.row * blockSize + blockSize / 2
 	ctx.fillStyle = color
 	circle(centerX, centerY, blockSize / 2, true)
 }
+
 Block.prototype.equal = function (otherBlock) {
 	return this.col === otherBlock.col && this.row === otherBlock.row
 }
-var Snake = function () {
+
+function Snake() {
 	this.segments = [new Block(7, 5), new Block(6, 5), new Block(5, 5)]
 	this.direction = 'right'
 	this.nextDirection = 'right'
 }
+
 Snake.prototype.draw = function (color1, color2) {
-	for (var i = 0; i < this.segments.length; i++) {
+	for (let i = 0; i < this.segments.length; i++) {
 		this.segments[i].drawSquare(i % 2 === 0 ? color1 : color2)
 	}
 }
+
 Snake.prototype.move = function () {
-	var head = this.segments[0]
-	var newHead
+	const head = this.segments[0]
+	let newHead
 	this.direction = this.nextDirection
 	if (this.direction === 'right') {
 		newHead = new Block(head.col + 1, head.row)
@@ -99,21 +90,23 @@ Snake.prototype.move = function () {
 		this.segments.pop()
 	}
 }
+
 Snake.prototype.checkCollision = function (head) {
-	var leftCollision = head.col === -1
-	var topCollision = head.row === -1
-	var rightCollision = head.col === widthInBlocks
-	var bottomCollision = head.row === heightInBlocks
-	var wallCollision =
+	const leftCollision = head.col === -1
+	const topCollision = head.row === -1
+	const rightCollision = head.col === widthInBlocks
+	const bottomCollision = head.row === heightInBlocks
+	const wallCollision =
 		leftCollision || topCollision || rightCollision || bottomCollision
-	var selfCollision = false
-	for (var i = 0; i < this.segments.length; i++) {
+	let selfCollision = false
+	for (let i = 0; i < this.segments.length; i++) {
 		if (head.equal(this.segments[i])) {
 			selfCollision = true
 		}
 	}
 	return wallCollision || selfCollision
 }
+
 Snake.prototype.setDirection = function (newDirection) {
 	if (
 		(this.direction === 'up' && newDirection === 'down') ||
@@ -125,23 +118,28 @@ Snake.prototype.setDirection = function (newDirection) {
 	}
 	this.nextDirection = newDirection
 }
-var Apple = function () {
+
+function Apple() {
 	this.position = new Block(10, 10)
 }
+
 Apple.prototype.draw = function () {
 	this.position.drawSquare('Coral')
 }
+
 Apple.prototype.move = function () {
-	var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1
-	var randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1
+	const randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1
+	const randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1
 	this.position = new Block(randomCol, randomRow)
 }
-var snake = new Snake()
-var apple = new Apple()
-var nextStep = true
-var colors = ['LightBlue', 'Gold']
-var animationTime = 150
-var gameLoop = function () {
+
+const snake = new Snake()
+const apple = new Apple()
+let nextStep = true
+const colors = ['LightBlue', 'Gold']
+const animationTime = 150
+
+function gameLoop() {
 	snake.move()
 	if (nextStep) {
 		ctx.clearRect(0, 0, width, height)
@@ -152,6 +150,17 @@ var gameLoop = function () {
 		setTimeout(gameLoop, animationTime)
 	}
 }
+
+function gameOver() {
+	ctx.font = '44px sans-serif'
+	ctx.fillStyle = 'White'
+	ctx.textAlign = 'center'
+	ctx.textBaseline = 'middle'
+	ctx.fillText('Game Over', width / 2, height / 2)
+	drawScore()
+	nextStep = false
+}
+
 gameLoop()
 
 const directions = {
@@ -166,7 +175,6 @@ const directions = {
 }
 
 document.body.addEventListener('keydown', (e) => {
-	e.preventDefault()
 	const newDirection = directions[e.keyCode]
 	newDirection && snake.setDirection(newDirection)
 })
