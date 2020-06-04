@@ -1,26 +1,7 @@
-.game {
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
-	width: 100%;
-	height: 100%;		
-}
-#canvas {	
-	border: 1px solid black;
-	margin: auto;
-}
-.controls {
-	width: 100%;	
-	text-align: center;			
-}
-.controls td {	
-	padding-top: 100px;
-	padding-bottom: 100px;		
-}
-.button {
-	width: 100px;
-	height: 100px;
-	margin: auto;	
-	border-radius: 100%;
-}
-.fa {
-	font-size: 100px;
+	align-items: center;
+	justify-content: center;
 }
