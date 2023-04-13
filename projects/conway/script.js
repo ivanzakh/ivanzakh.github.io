@@ -2,8 +2,8 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 const backgroundColor = '#333';
-const cellColor = '#e2c20f';
-const stepsPerSecond = 50;
+const cellColor = '#fffb00';
+const stepsPerSecond = 100;
 const existenceCoefficient = 0.12;
 const cellSize = 3;
 
