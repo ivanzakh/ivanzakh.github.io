@@ -2,7 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <!-- Иконки, manifest и theme-color вставляет vite-plugin-pwa (pwaAssets). -->
+    <!-- Иконки и manifest вставляет vite-plugin-pwa (pwaAssets). theme-color —
+         свой, ниже: у манифеста только один статический цвет на все темы, а
+         $primary в тёмной теме светлее (#79b8c4 против #13383f), иначе статус-бар
+         ОС не совпадал бы с верхним тулбаром приложения в тёмном режиме. -->
+    <meta name="theme-color" content="#13383f" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#79b8c4" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="smui.css" media="(prefers-color-scheme: light)" />
     <link
       rel="stylesheet"
@@ -19,10 +24,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Чеклисты" />
     <title>Чеклисты</title>
-    <script type="module" crossorigin src="/projects/checklist/assets/index-BRMNQjJl.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-DGOktdVE.css">
+    <script type="module" crossorigin src="/projects/checklist/assets/index-DEi4-_Zu.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-WpINlGDI.css">
   <link rel="manifest" href="/projects/checklist/manifest.webmanifest">
-<meta name="theme-color" content="#13383f">
 <link rel="icon" href="/projects/checklist/favicon.ico" sizes="48x48">
 <link rel="icon" href="/projects/checklist/icon.svg" sizes="any" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/projects/checklist/apple-touch-icon-180x180.png"></head>
