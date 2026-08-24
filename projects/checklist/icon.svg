@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Фон заливает весь квадрат: генератор режет из этого же файла maskable-вариант,
+       а у него прозрачные поля превратились бы в белые уголки под маской Android. -->
+  <rect width="512" height="512" fill="#13383f" />
+  <!-- Контент держится внутри центральных ~80% (круг радиусом 205px от центра) —
+       это safe zone maskable-иконки, за её пределами Android обрезает без предупреждения. -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="112" y="112" width="288" height="288" rx="64" stroke-width="32" />
+    <path d="M176 256l56 56 104-112" stroke-width="36" />
+  </g>
+</svg>

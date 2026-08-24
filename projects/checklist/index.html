@@ -1,39 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- TODO(PWA): self-host via @fontsource/roboto + @fontsource/roboto-mono so fonts land in the
-         service worker precache and are guaranteed offline from first install, instead of relying
-         on a runtime-cached request to Google's CDN. -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- TODO(PWA): drop this font and use @mdi/js instead (SMUI's documented SVG-icon alternative,
-         see sveltematerialui.com/INSTALL and the Icon Button demo's "Using SVGs" section) — tree-shaken
-         per-icon SVG paths avoid the ligature-text-then-icon flash and any font-loading race. -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block"
-      rel="stylesheet"
-    />
+    <!-- Иконки, manifest и theme-color вставляет vite-plugin-pwa (pwaAssets). -->
+    <link rel="stylesheet" href="smui.css" media="(prefers-color-scheme: light)" />
     <link
       rel="stylesheet"
-      href="./smui.css"
-      media="(prefers-color-scheme: light)"
-    />
-    <link
-      rel="stylesheet"
-      href="./smui-dark.css"
+      href="smui-dark.css"
       media="screen and (prefers-color-scheme: dark)"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>checklist</title>
-    <script type="module" crossorigin src="./assets/index-DvOOKJJg.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CFBU0T4D.css">
-  </head>
+    <!-- Safari игнорирует manifest при добавлении на домашний экран и читает
+         только эти мета-теги. Chrome ругается на apple-версию как на
+         устаревшую, но убрать её нельзя — Safari другую не понимает,
+         поэтому держим обе. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Чеклисты" />
+    <title>Чеклисты</title>
+    <script type="module" crossorigin src="/projects/checklist/assets/index-BRMNQjJl.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-DGOktdVE.css">
+  <link rel="manifest" href="/projects/checklist/manifest.webmanifest">
+<meta name="theme-color" content="#13383f">
+<link rel="icon" href="/projects/checklist/favicon.ico" sizes="48x48">
+<link rel="icon" href="/projects/checklist/icon.svg" sizes="any" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/projects/checklist/apple-touch-icon-180x180.png"></head>
   <body>
     <div id="app"></div>
   </body>
