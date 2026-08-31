@@ -2,18 +2,26 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Тема следует за системной. Токены shadcn переключаются классом .dark
+      // на <html>, и ставить его некому — своего рантайма у темы нет. Скрипт
+      // inline и выше разметки: подключённый файлом, он бы дал светлую вспышку
+      // первого кадра.
+      // Отсюда же вырастет ручной переключатель, если понадобится: достаточно
+      // будет читать сохранённый выбор перед обращением к matchMedia.
+      const systemDark = matchMedia('(prefers-color-scheme: dark)')
+      const applyTheme = (e) => document.documentElement.classList.toggle('dark', e.matches)
+      applyTheme(systemDark)
+      systemDark.addEventListener('change', applyTheme)
+    </script>
     <!-- Иконки и manifest вставляет vite-plugin-pwa (pwaAssets). theme-color —
-         свой, ниже: у манифеста только один статический цвет на все темы, а
-         $primary в тёмной теме светлее (#79b8c4 против #13383f), иначе статус-бар
-         ОС не совпадал бы с верхним тулбаром приложения в тёмном режиме. -->
-    <meta name="theme-color" content="#13383f" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#79b8c4" media="(prefers-color-scheme: dark)" />
-    <link rel="stylesheet" href="smui.css" media="(prefers-color-scheme: light)" />
-    <link
-      rel="stylesheet"
-      href="smui-dark.css"
-      media="screen and (prefers-color-scheme: dark)"
-    />
+         свой, ниже и в двух вариантах: у манифеста только один статический цвет
+         на все темы, а шапка приложения красится в --background, который в
+         тёмной теме почти чёрный, и статус-бар ОС разъезжался бы с ней.
+         Значения — вычисленные --background из src/app.css (oklch(1 0 0) и
+         oklch(0.148 0.004 228.8)); менять их нужно вместе с токенами. -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#090b0c" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Safari игнорирует manifest при добавлении на домашний экран и читает
          только эти мета-теги. Chrome ругается на apple-версию как на
@@ -24,8 +32,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Чеклисты" />
     <title>Чеклисты</title>
-    <script type="module" crossorigin src="/projects/checklist/assets/index-DEi4-_Zu.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-WpINlGDI.css">
+    <script type="module" crossorigin src="/projects/checklist/assets/index-CwaWKXam.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-Cb3JZjsK.css">
   <link rel="manifest" href="/projects/checklist/manifest.webmanifest">
 <link rel="icon" href="/projects/checklist/favicon.ico" sizes="48x48">
 <link rel="icon" href="/projects/checklist/icon.svg" sizes="any" type="image/svg+xml">
