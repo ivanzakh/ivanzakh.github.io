@@ -2,6 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <!-- Иконки и manifest вставляет vite-plugin-pwa (pwaAssets). Один тег без
+         media, а не пара с prefers-color-scheme: в установленном PWA
+         системная строка статуса красится по theme_color из манифеста, а
+         у него нет медиа-варианта — там только светлый, и пара условных тегов
+         ниже на неё не влияла бы. content обновляет inline-скрипт вместе с
+         классом .dark, поэтому тег должен стоять до script. Значения — то же
+         --primary, что и у шапки (#13383f и #79b8c4 — исходные HEX, из
+         которых он посчитан в OKLCH в src/app.css); менять нужно вместе. -->
+    <meta name="theme-color" content="#13383f" id="theme-color-meta" />
     <script>
       // Тема следует за системной. Токены shadcn переключаются классом .dark
       // на <html>, и ставить его некому — своего рантайма у темы нет. Скрипт
@@ -10,19 +19,14 @@
       // Отсюда же вырастет ручной переключатель, если понадобится: достаточно
       // будет читать сохранённый выбор перед обращением к matchMedia.
       const systemDark = matchMedia('(prefers-color-scheme: dark)')
-      const applyTheme = (e) => document.documentElement.classList.toggle('dark', e.matches)
+      const themeColorMeta = document.getElementById('theme-color-meta')
+      const applyTheme = (e) => {
+        document.documentElement.classList.toggle('dark', e.matches)
+        themeColorMeta.setAttribute('content', e.matches ? '#79b8c4' : '#13383f')
+      }
       applyTheme(systemDark)
       systemDark.addEventListener('change', applyTheme)
     </script>
-    <!-- Иконки и manifest вставляет vite-plugin-pwa (pwaAssets). theme-color —
-         свой, ниже и в двух вариантах: у манифеста только один статический цвет
-         на все темы, а шапка приложения закрашена в --primary, который в
-         светлой и тёмной теме — разные оттенки, и статус-бар ОС разъезжался
-         бы с ней. Значения — --primary из src/app.css (#13383f и #79b8c4,
-         те же исходные HEX, из которых он посчитан в OKLCH); менять нужно
-         вместе с токеном. -->
-    <meta name="theme-color" content="#13383f" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#79b8c4" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Safari игнорирует manifest при добавлении на домашний экран и читает
          только эти мета-теги. Chrome ругается на apple-версию как на
