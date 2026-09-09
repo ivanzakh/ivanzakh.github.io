@@ -16,12 +16,13 @@
     </script>
     <!-- Иконки и manifest вставляет vite-plugin-pwa (pwaAssets). theme-color —
          свой, ниже и в двух вариантах: у манифеста только один статический цвет
-         на все темы, а шапка приложения красится в --background, который в
-         тёмной теме почти чёрный, и статус-бар ОС разъезжался бы с ней.
-         Значения — вычисленные --background из src/app.css (oklch(1 0 0) и
-         oklch(0.148 0.004 228.8)); менять их нужно вместе с токенами. -->
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#090b0c" media="(prefers-color-scheme: dark)" />
+         на все темы, а шапка приложения закрашена в --primary, который в
+         светлой и тёмной теме — разные оттенки, и статус-бар ОС разъезжался
+         бы с ней. Значения — --primary из src/app.css (#13383f и #79b8c4,
+         те же исходные HEX, из которых он посчитан в OKLCH); менять нужно
+         вместе с токеном. -->
+    <meta name="theme-color" content="#13383f" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#79b8c4" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Safari игнорирует manifest при добавлении на домашний экран и читает
          только эти мета-теги. Chrome ругается на apple-версию как на
@@ -32,8 +33,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Чеклисты" />
     <title>Чеклисты</title>
-    <script type="module" crossorigin src="/projects/checklist/assets/index-CwaWKXam.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-Cb3JZjsK.css">
+    <script type="module" crossorigin src="/projects/checklist/assets/index-BzHpxMPh.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/checklist/assets/index-B6r9SGN_.css">
   <link rel="manifest" href="/projects/checklist/manifest.webmanifest">
 <link rel="icon" href="/projects/checklist/favicon.ico" sizes="48x48">
 <link rel="icon" href="/projects/checklist/icon.svg" sizes="any" type="image/svg+xml">
